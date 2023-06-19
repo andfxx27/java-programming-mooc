@@ -1,4 +1,4 @@
-package andfxx.p3.arrays;
+package andfxx.p4.arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;

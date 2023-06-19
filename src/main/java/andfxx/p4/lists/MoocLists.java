@@ -1,4 +1,4 @@
-package andfxx.p3.lists;
+package andfxx.p4.lists;
 
 import java.util.ArrayList;
 import java.util.Scanner;
