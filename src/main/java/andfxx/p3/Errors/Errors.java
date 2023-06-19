@@ -1,4 +1,4 @@
-package andfxx.p3.Errors;
+package andfxx.p3.errors;
 
 public class Errors {
     public static void errors() {
