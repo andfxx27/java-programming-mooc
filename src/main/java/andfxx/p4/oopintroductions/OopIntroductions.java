@@ -4,7 +4,58 @@ public class OopIntroductions {
     public static void oopIntroductions() {
         System.out.println("Hello world from andfxx.p4.oopintroductions");
 
-        yourFirstBankTransfer();
+        debt();
+    }
+
+    private static void debt() {
+        Debt mortgage = new Debt(120000.0, 1.20);
+        mortgage.printBalance();
+
+        mortgage.waitOneYear();
+        mortgage.printBalance();
+
+        int years = 0;
+
+        while (years < 20) {
+            mortgage.waitOneYear();
+            years = years + 1;
+        }
+
+        mortgage.printBalance();
+    }
+
+    private static void decreasingCounter() {
+        DecreasingCounter counter = new DecreasingCounter(100);
+
+        counter.printValue();
+
+        counter.reset();
+        counter.printValue();
+
+        counter.decrement();
+        counter.printValue();
+    }
+
+    private static void product() {
+        Product banana = new Product("Banana", 1.1, 13);
+
+        banana.printProduct();
+    }
+
+    private static void door() {
+        Door alexander = new Door();
+
+        alexander.knock();
+        alexander.knock();
+    }
+
+    private static void whistle() {
+        Whistle duckWhistle = new Whistle("Kvaak");
+        Whistle roosterWhistle = new Whistle("Peef");
+
+        duckWhistle.sound();
+        roosterWhistle.sound();
+        duckWhistle.sound();
     }
 
     private static void yourFirstBankTransfer() {
