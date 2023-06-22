@@ -1,11 +1,11 @@
 package andfxx;
 
-import andfxx.p3.usingstrings.UsingStrings;
+import andfxx.p4.oopintroductions.OopIntroductions;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world from andfxx");
 
-        UsingStrings.usingStrings();
+        OopIntroductions.oopIntroductions();
     }
 }
