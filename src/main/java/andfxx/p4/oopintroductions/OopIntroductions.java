@@ -4,7 +4,24 @@ public class OopIntroductions {
     public static void oopIntroductions() {
         System.out.println("Hello world from andfxx.p4.oopintroductions");
 
-        debt();
+        film();
+    }
+
+    private static void film() {
+        Film harryPotter = new Film("Harry Potter 3", 13);
+
+        int currentAge = 13;
+
+        if (currentAge > harryPotter.ageRating()) {
+            System.out.println("You are allowed to watch harry potter!");
+        } else {
+            System.out.println("Just go watch roblox xD...");
+        }
+    }
+
+    private static void song() {
+        Song garden = new Song("In The Garden", 10910);
+        System.out.println("The song " + garden.name() + " has a length of " + garden.length() + " seconds.");
     }
 
     private static void debt() {
