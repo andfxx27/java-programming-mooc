@@ -1,10 +1,141 @@
 package andfxx.p4.oopintroductions;
 
+import java.util.Scanner;
+
 public class OopIntroductions {
     public static void oopIntroductions() {
         System.out.println("Hello world from andfxx.p4.oopintroductions");
 
-        film();
+        multipleCards();
+    }
+
+    private static void multipleCards() {
+        PaymentCard paulsCard = new PaymentCard(20);
+        PaymentCard mattsCard = new PaymentCard(30);
+
+        paulsCard.eatHeartily();
+        mattsCard.eatAffordably();
+
+        System.out.println("Paul's card: " + paulsCard);
+        System.out.println("Matts's card: " + mattsCard);
+
+        paulsCard.addMoney(20);
+        mattsCard.eatHeartily();
+
+        System.out.println("Paul's card: " + paulsCard);
+        System.out.println("Matts's card: " + mattsCard);
+
+        paulsCard.eatAffordably();
+        paulsCard.eatAffordably();
+
+        mattsCard.addMoney(50);
+
+        System.out.println("Paul's card: " + paulsCard);
+        System.out.println("Matts's card: " + mattsCard);
+    }
+
+    private static void paymentCard() {
+        PaymentCard paymentCard = new PaymentCard(10);
+        System.out.println(paymentCard);
+
+        paymentCard.addMoney(5);
+        System.out.println(paymentCard);
+
+        paymentCard.addMoney(10);
+        System.out.println(paymentCard);
+
+        paymentCard.addMoney(-10);
+        System.out.println(paymentCard);
+
+        paymentCard.addMoney(200);
+        System.out.println(paymentCard);
+    }
+
+    private static void multipleSums() {
+        Scanner scanner = new Scanner(System.in);
+
+        Statistics s1 = new Statistics();
+        Statistics s2 = new Statistics();
+        Statistics s3 = new Statistics();
+
+        System.out.println("Enter numbers:");
+        while (true) {
+            int input = Integer.parseInt(scanner.nextLine());
+            if (input == -1) {
+                break;
+            }
+
+            s1.addNumber(input);
+
+            if (input % 2 == 0) {
+                s2.addNumber(input);
+            }
+
+            if (input % 2 == 1) {
+                s3.addNumber(input);
+            }
+        }
+
+        System.out.println("Sum: " + s1.sum());
+        System.out.println("Sum of even numbers: " + s2.sum());
+        System.out.println("Sum of odd numbers: " + s3.sum());
+    }
+
+    private static void sumOfUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        Statistics statistics = new Statistics();
+
+        System.out.println("Enter numbers:");
+        while (true) {
+            int input = Integer.parseInt(scanner.nextLine());
+            if (input == -1) {
+                break;
+            }
+
+            statistics.addNumber(input);
+        }
+
+        System.out.println("Sum: " + statistics.sum());
+    }
+
+    private static void statistics() {
+        Statistics statistics = new Statistics();
+        statistics.addNumber(3);
+        statistics.addNumber(5);
+        statistics.addNumber(1);
+        statistics.addNumber(2);
+        System.out.println("Count: " + statistics.getCount());
+        System.out.println("Sum: " + statistics.sum());
+        System.out.println("Average: " + statistics.average());
+    }
+
+    private static void multiplier() {
+        Multiplier multiplyByThree = new Multiplier(3);
+
+        System.out.println("multiplyByThree.multiply(2): " + multiplyByThree.multiply(2));
+        System.out.println("multiplyByThree.multiply(3): " + multiplyByThree.multiply(3));
+    }
+
+    private static void agent() {
+        Agent bond = new Agent("James", "Bond");
+
+        System.out.println(bond);
+    }
+
+    private static void gauge() {
+        Gauge g = new Gauge();
+
+        while (!g.full()) {
+            System.out.println("Increasing gauge value, current gauge value: " + g.value());
+            g.increase();
+        }
+
+        System.out.println("Gauge is full! current gauge value: " + g.value());
+
+        System.out.println("Gauge usage, decrease value by 1.");
+        g.decrease();
+        System.out.println("Current gauge value: " + g.value());
     }
 
     private static void film() {
