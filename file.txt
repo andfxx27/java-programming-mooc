@@ -1,0 +1,2 @@
+Hello, world!
+This is content from a file.
