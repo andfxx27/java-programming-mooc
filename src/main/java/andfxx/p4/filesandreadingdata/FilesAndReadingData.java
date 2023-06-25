@@ -11,7 +11,7 @@ public class FilesAndReadingData {
     public static void filesAndReadingData() {
         System.out.println("Hello world from andfxx.p4.filesandreadingdata");
 
-        sportStatistics();
+        readingFromAFile();
     }
 
     private static void sportStatistics() {
@@ -190,20 +190,21 @@ public class FilesAndReadingData {
     }
 
     private static void printingFromAFile() {
-        try (Scanner s = new Scanner(Paths.get("file.txt"))) {
+        try (Scanner s = new Scanner(Paths.get("files/p4/file.txt"))) {
             while (s.hasNextLine()) {
                 String line = s.nextLine();
 
                 System.out.println(line);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Error: " + e.getMessage());
         }
     }
 
     private static void readingFromAFile() {
         // Paths.get(...) read from root directory of a project
-        try (Scanner s = new Scanner(Paths.get("file.txt"))) {
+        try (Scanner s = new Scanner(Paths.get("files/p4/file.txt"))) {
             while (s.hasNextLine()) {
                 String line = s.nextLine();
 
