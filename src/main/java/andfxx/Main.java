@@ -1,11 +1,11 @@
 package andfxx;
 
-import andfxx.p5.objectsandreferences.ObjectsAndReferences;
+import andfxx.p6.objectswithinobjects.ObjectsWithinObjects;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world from andfxx");
 
-        ObjectsAndReferences.objectsAndReferences();
+        ObjectsWithinObjects.objectsWithinObjects();
     }
 }
