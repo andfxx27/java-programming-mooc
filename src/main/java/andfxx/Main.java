@@ -1,11 +1,9 @@
 package andfxx;
 
-import andfxx.p6.objectswithinobjects.ObjectsWithinObjects;
+import andfxx.p6.separatinguifromlogic.SeparatingUserInterfaceFromLogic;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world from andfxx");
-
-        ObjectsWithinObjects.objectsWithinObjects();
+        SeparatingUserInterfaceFromLogic.separatingUserInterfaceFromLogic();
     }
 }
