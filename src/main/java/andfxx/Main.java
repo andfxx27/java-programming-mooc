@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p6.separatinguifromlogic.SeparatingUserInterfaceFromLogic;
+import andfxx.p6.introductiontotesting.IntroductionToTesting;
 
 public class Main {
     public static void main(String[] args) {
-        SeparatingUserInterfaceFromLogic.separatingUserInterfaceFromLogic();
+        IntroductionToTesting.introductionToTesting();
     }
 }
