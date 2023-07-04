@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p6.introductiontotesting.IntroductionToTesting;
+import andfxx.p7.programmingparadigms.ProgrammingParadigms;
 
 public class Main {
     public static void main(String[] args) {
-        IntroductionToTesting.introductionToTesting();
+        ProgrammingParadigms.programmingParadigms();
     }
 }
