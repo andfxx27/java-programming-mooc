@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p7.programmingparadigms.ProgrammingParadigms;
+import andfxx.p7.algorithms.Algorithms;
 
 public class Main {
     public static void main(String[] args) {
-        ProgrammingParadigms.programmingParadigms();
+        Algorithms.algorithms();
     }
 }
