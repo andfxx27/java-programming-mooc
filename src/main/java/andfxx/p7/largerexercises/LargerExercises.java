@@ -2,6 +2,7 @@ package andfxx.p7.largerexercises;
 
 import andfxx.p7.largerexercises.gradestatistics.GradeStatistics;
 import andfxx.p7.largerexercises.recipesearch.Recipe;
+import andfxx.p7.largerexercises.recipesearch.RecipeSearch;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -47,6 +48,8 @@ public class LargerExercises {
             return;
         }
 
+        RecipeSearch recipeSearch = new RecipeSearch(recipes);
+
         System.out.println("Commands:");
         System.out.println("list - lists all recipes");
         System.out.println("stop - stop the program");
@@ -63,40 +66,22 @@ public class LargerExercises {
 
             switch (command) {
                 case "list" -> {
-                    System.out.println("Recipes:");
-                    for (Recipe recipe : recipes) {
-                        System.out.println(recipe.name() + ", cooking time: " + recipe.cookingTime());
-                    }
+                    recipeSearch.displayRecipes(recipes);
                 }
                 case "find name" -> {
                     System.out.print("Searched word: ");
                     String recipeName = scanner.nextLine();
-                    System.out.println("Recipes:");
-                    for (Recipe recipe : recipes) {
-                        if (recipe.name().toLowerCase().contains(recipeName.toLowerCase())) {
-                            System.out.println(recipe.name() + ", cooking time: " + recipe.cookingTime());
-                        }
-                    }
+                    recipeSearch.displayRecipes(recipeSearch.getRecipesByName(recipeName));
                 }
                 case "find cooking time" -> {
                     System.out.print("Max cooking time: ");
                     int maxCookingTime = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Recipes:");
-                    for (Recipe recipe : recipes) {
-                        if (recipe.cookingTime() <= maxCookingTime) {
-                            System.out.println(recipe.name() + ", cooking time: " + recipe.cookingTime());
-                        }
-                    }
+                    recipeSearch.displayRecipes(recipeSearch.getRecipesWithCookingTimeLessThanOrEqualTo(maxCookingTime));
                 }
                 case "find ingredient" -> {
                     System.out.print("Ingredient: ");
                     String ingredient = scanner.nextLine();
-                    System.out.println("Recipes:");
-                    for (Recipe recipe : recipes) {
-                        if (recipe.ingredients().contains(ingredient)) {
-                            System.out.println(recipe.name() + ", cooking time: " + recipe.cookingTime());
-                        }
-                    }
+                    recipeSearch.displayRecipes(recipeSearch.getRecipesByIngredient(ingredient));
                 }
             }
         }
