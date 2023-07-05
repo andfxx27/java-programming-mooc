@@ -1,11 +1,14 @@
 package andfxx.p7.largerexercises;
 
+import andfxx.p7.largerexercises.bigyear.BigYear;
+import andfxx.p7.largerexercises.bigyear.Bird;
 import andfxx.p7.largerexercises.gradestatistics.GradeStatistics;
 import andfxx.p7.largerexercises.recipesearch.Recipe;
 import andfxx.p7.largerexercises.recipesearch.RecipeSearch;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +16,57 @@ public class LargerExercises {
     public static void largerExercises() {
         System.out.println("Hello world from andfxx.p7.largerexercises");
 
-        recipeSearch();
+        bigYear();
+    }
+
+    private static void bigYear() {
+        Scanner scanner = new Scanner(System.in);
+
+        List<String> validCommands = new ArrayList<>(Arrays.asList("Add", "Observation", "All", "One", "Quit"));
+        BigYear bigYear = new BigYear();
+
+        while (true) {
+            System.out.print("? ");
+            String command = scanner.nextLine();
+            if (command.equals("Quit")) {
+                break;
+            }
+
+            if (!validCommands.contains(command)) {
+                System.out.println("Invalid command.");
+                continue;
+            }
+
+            switch (command) {
+                case "Add" -> {
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Name in latin: ");
+                    String latinName = scanner.nextLine();
+
+                    bigYear.addBird(new Bird(name, latinName));
+                }
+                case "Observation" -> {
+                    System.out.print("Bird? ");
+                    String bird = scanner.nextLine();
+
+                    boolean exists = bigYear.observation(bird);
+
+                    if (!exists) {
+                        System.out.println("Not a bird!");
+                    }
+                }
+                case "All" -> {
+                    bigYear.all();
+                }
+                case "One" -> {
+                    System.out.print("Bird? ");
+                    String bird = scanner.nextLine();
+
+                    bigYear.one(bird);
+                }
+            }
+        }
     }
 
     private static void recipeSearch() {
