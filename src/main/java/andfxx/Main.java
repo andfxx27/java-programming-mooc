@@ -1,10 +1,9 @@
 package andfxx;
 
-import andfxx.p7.algorithms.Algorithms;
-import andfxx.p7.largerexercises.LargerExercises;
+import andfxx.p8.recap.Recap;
 
 public class Main {
     public static void main(String[] args) {
-        LargerExercises.largerExercises();
+        Recap.recap();
     }
 }
