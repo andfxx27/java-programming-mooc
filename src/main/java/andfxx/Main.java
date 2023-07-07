@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p8.myhashmap.MyHashMap;
+import andfxx.p8.similarityofobjects.SimilarityOfObjects;
 
 public class Main {
     public static void main(String[] args) {
-        MyHashMap.myHashMap();
+        SimilarityOfObjects.similarityOfObjects();
     }
 }
