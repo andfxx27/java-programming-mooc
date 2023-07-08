@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p8.similarityofobjects.SimilarityOfObjects;
+import andfxx.p8.hashmapgrouping.HashMapGrouping;
 
 public class Main {
     public static void main(String[] args) {
-        SimilarityOfObjects.similarityOfObjects();
+        HashMapGrouping.hashMapGrouping();
     }
 }
