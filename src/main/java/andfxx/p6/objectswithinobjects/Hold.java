@@ -32,16 +32,10 @@ public class Hold {
     }
 
     private int totalWeight() {
-        int weight = 0;
-        for (Suitcase suitcase : suitcases) {
-            weight += suitcase.totalWeight();
-        }
-        return weight;
+        return suitcases.stream().mapToInt(Suitcase::totalWeight).sum();
     }
 
     public void printItems() {
-        for (Suitcase suitcase : suitcases) {
-            suitcase.printItems();
-        }
+        suitcases.forEach(Suitcase::printItems);
     }
 }

@@ -1,5 +1,11 @@
 package andfxx.p10.handlingcollectionasstreams;
 
+import andfxx.p10.handlingcollectionasstreams.uniquelastnames.Person;
+import andfxx.p7.algorithms.Book;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
@@ -11,7 +17,82 @@ public class HandlingCollectionAsStreams {
     public static void handlingCollectionAsStreams() {
         System.out.println("Hello world from andfxx.p10.handlingcollectionasstreams");
 
-        limitedNumbers();
+        booksFromFile();
+    }
+
+    private static void booksFromFile() {
+        String filePath = "files/p10/books.txt";
+        try {
+            List<Book> books = readBooks(filePath);
+            System.out.println(books);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private static List<Book> readBooks(String filePath) throws IOException {
+        try (Stream<Book> bookStream = Files
+                .lines(Paths.get(filePath))
+                .map(s -> s.split(","))
+                .filter(strings -> strings.length == 2)
+                .map(strings -> new Book(Integer.parseInt(strings[0]), strings[1]))) {
+            return bookStream.toList();
+        } catch (IOException exception) {
+            return null;
+        }
+    }
+
+    private static void readingFilesPerLine() {
+        String filePath = "files/p10/file.txt";
+        try {
+            List<String> lines = read(filePath);
+            System.out.println(lines);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private static List<String> read(String filePath) throws IOException {
+        try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
+            return stream.toList();
+        } catch (IOException exception) {
+            return null;
+        }
+    }
+
+    private static void weighting() {
+        System.out.println("Changes is done on p6.objectswithinobjects.cargoHold() method.");
+    }
+
+    private static void uniqueLastNames() {
+        Scanner scanner = new Scanner(System.in);
+
+        List<Person> people = new ArrayList<>();
+
+        while (true) {
+            System.out.println("Continue personal information input? \"quit\" ends:");
+            String initialCommand = scanner.nextLine();
+            if (initialCommand.equals("quit")) {
+                break;
+            }
+
+            System.out.print("Input first name: ");
+            String firstname = scanner.nextLine();
+
+            System.out.print("Input last name: ");
+            String lastname = scanner.nextLine();
+
+            System.out.print("Input the year of birth: ");
+            int birthYear = Integer.parseInt(scanner.nextLine());
+
+            people.add(new Person(firstname, lastname, birthYear));
+        }
+
+        List<String> uniqueLastNames = people.stream().map(Person::lastname).distinct().sorted().toList();
+
+        for (String name : uniqueLastNames) {
+            System.out.println(name);
+        }
     }
 
     private static void limitedNumbers() {
