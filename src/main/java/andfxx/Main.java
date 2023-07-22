@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p10.comparableinterface.ComparableInterface;
+import andfxx.p10.otherusefultechniques.OtherUsefulTechniques;
 
 public class Main {
     public static void main(String[] args) {
-        ComparableInterface.comparableInterface();
+        OtherUsefulTechniques.otherUsefulTechniques();
     }
 }
