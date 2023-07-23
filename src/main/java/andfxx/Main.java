@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p10.otherusefultechniques.OtherUsefulTechniques;
+import andfxx.p11.classdiagrams.ClassDiagrams;
 
 public class Main {
     public static void main(String[] args) {
-        OtherUsefulTechniques.otherUsefulTechniques();
+        ClassDiagrams.classDiagrams();
     }
 }
