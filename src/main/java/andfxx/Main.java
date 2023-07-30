@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p11.exceptions.Exceptions;
+import andfxx.p11.processingfiles.ProcessingFiles;
 
 public class Main {
     public static void main(String[] args) {
-        Exceptions.exceptions();
+        ProcessingFiles.processingFiles();
     }
 }
