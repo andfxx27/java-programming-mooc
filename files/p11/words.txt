@@ -1,0 +1,4 @@
+red:merah
+color:warna
+Hello:Halo
+words:kata
