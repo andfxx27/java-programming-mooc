@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p11.processingfiles.ProcessingFiles;
+import andfxx.p12.typeparameters.TypeParameters;
 
 public class Main {
     public static void main(String[] args) {
-        ProcessingFiles.processingFiles();
+        TypeParameters.typeParameters();
     }
 }
