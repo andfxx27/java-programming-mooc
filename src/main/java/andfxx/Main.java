@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p12.arraylistandhashtable.ArrayListAndHashTable;
+import andfxx.p12.randomness.Randomness;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayListAndHashTable.arrayListAndHashTable();
+        Randomness.randomness();
     }
 }
