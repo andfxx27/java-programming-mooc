@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p12.typeparameters.TypeParameters;
+import andfxx.p12.arraylistandhashtable.ArrayListAndHashTable;
 
 public class Main {
     public static void main(String[] args) {
-        TypeParameters.typeParameters();
+        ArrayListAndHashTable.arrayListAndHashTable();
     }
 }
