@@ -1,9 +1,9 @@
 package andfxx;
 
-import andfxx.p12.multidimensionaldata.MultidimensionalData;
+import andfxx.p13.graphicaluserinterfaces.GraphicalUserInterfaces;
 
 public class Main {
     public static void main(String[] args) {
-        MultidimensionalData.multidimensionalData();
+        GraphicalUserInterfaces.graphicalUserInterfaces();
     }
 }
